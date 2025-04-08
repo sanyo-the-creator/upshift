@@ -1,0 +1,7 @@
+{
+  "name": "Upshift",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
