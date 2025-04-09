@@ -35,3 +35,19 @@
 /* @import "@ionic/angular/css/palettes/dark.always.css"; */
 /* @import "@ionic/angular/css/palettes/dark.class.css"; */
 @import "@ionic/angular/css/palettes/dark.system.css";
+
+:root {
+  --bg: #0d031c;              /* Main background */
+  --surface: #1a102b;         /* Cards and containers */
+  --surface-alt: #221437;     /* Slight variation for subtle contrast */
+  --accent: #6c3fcf;          /* Main highlight color (purple/blue fusion) */
+  --accent-hover: #8354f0;    /* Lighter accent for hover/focus */
+  --text: #f0ecff;            /* High contrast text */
+  --text-secondary: #a99cc3;  /* Desaturated for subtitles, metadata */
+  --text-muted: #6c6480;      /* Hints, timestamps, soft elements */
+  --border: #2a1d3f;          /* Card and element borders */
+  --success: #32d690;         /* Completed or positive status */
+  --warning: #facc15;         /* Time-sensitive tasks, alerts */
+  --error: #ef4444;           /* Incomplete/failed task indicators */
+  --glow: #6c3fcf33;          /* Soft UI glow around focused elements */
+}
