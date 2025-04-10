@@ -8,4 +8,22 @@
       </ion-row>
     </ion-toolbar>
   </ion-header>
+
+  <ion-grid *ngIf="currentQuestion" class="ion-padding">
+    <ion-row class="questions">
+      <h1>Question #{{ currentQuestion.id +1 }}</h1>
+      <ion-text class="ion-margin-top ion-margin-bottom">
+        {{ currentQuestion.question }}
+      </ion-text>
+      <ion-list lines="none" *ngFor="let answerList of currentQuestion.answers">
+        <ion-button class="ion-margin-top" size="large">
+          <span>
+            <ion-badge class="ion-align-items-center ion-justify-content-center">
+              <ion-text>{{answerList.id + 1  }}</ion-text>
+            </ion-badge> {{ answerList.answer }}
+          </span>
+        </ion-button>
+      </ion-list>
+    </ion-row>
+  </ion-grid>
 </ion-content>
