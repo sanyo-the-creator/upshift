@@ -4,13 +4,15 @@ import { FormsModule } from '@angular/forms';
 import { IonicModule } from '@ionic/angular';
 import { OnboardingPageRoutingModule } from './onboarding-routing.module';
 import { OnboardingPage } from './onboarding.page';
+import {SharedModule} from "../shared/shared.module";
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    OnboardingPageRoutingModule
+    OnboardingPageRoutingModule,
+    SharedModule
   ],
   declarations: [OnboardingPage]
 })

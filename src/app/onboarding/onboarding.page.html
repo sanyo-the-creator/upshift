@@ -2,28 +2,45 @@
   <ion-header collapse="condense">
     <ion-toolbar>
       <ion-row class="head">
-        <ion-icon name="arrow-back-outline"></ion-icon>
-        <ion-progress-bar [value]=""></ion-progress-bar>
-        <ion-badge>EN</ion-badge>
+        <ion-icon name="arrow-back-outline" (click)="goBack()"></ion-icon>
+        <ion-progress-bar *ngIf="!quizEnded" [value]="progress" color="success"></ion-progress-bar>
+        <ion-badge *ngIf="!quizEnded">EN</ion-badge>
       </ion-row>
     </ion-toolbar>
   </ion-header>
 
-  <ion-grid *ngIf="currentQuestion" class="ion-padding">
+  <ion-grid *ngIf="currentQuestion && !quizEnded" class="ion-padding">
     <ion-row class="questions">
-      <h1>Question #{{ currentQuestion.id +1 }}</h1>
+      <h1>Question #{{ currentQuestion.id + 1 }}</h1>
       <ion-text class="ion-margin-top ion-margin-bottom">
         {{ currentQuestion.question }}
       </ion-text>
-      <ion-list lines="none" *ngFor="let answerList of currentQuestion.answers">
-        <ion-button class="ion-margin-top" size="large">
+      <ion-list lines="none">
+        <ion-button
+          *ngFor="let answerItem of currentQuestion.answers"
+          class="ion-margin-top"
+          size="large"
+          (click)="clickedAnswer(answerItem.answer)"
+        >
           <span>
             <ion-badge class="ion-align-items-center ion-justify-content-center">
-              <ion-text>{{answerList.id + 1  }}</ion-text>
-            </ion-badge> {{ answerList.answer }}
+              <ion-text>{{ answerItem.id + 1 }}</ion-text>
+            </ion-badge> {{ answerItem.answer }}
           </span>
         </ion-button>
       </ion-list>
+    </ion-row>
+    <ion-row *ngIf="quizEnded">
+      <h1>Do you have a referral code?</h1>
+      <ion-text>
+        You can skip this step.
+      </ion-text>
+      <ion-input>
+
+      </ion-input>
+      <ion-button>
+        Continue
+      </ion-button>
     </ion-row>
   </ion-grid>
 </ion-content>

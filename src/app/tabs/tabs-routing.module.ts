@@ -29,6 +29,15 @@ const routes: Routes = [
     ]
   },
   {
+    path: 'pricing',
+    children: [
+      {
+        path: '',
+        loadChildren: () => import('../pricing/pricing.module').then(m => m.PricingPageModule)
+      }
+    ]
+  },
+  {
     path: '',
     redirectTo: 'signup',
     pathMatch: 'full'
