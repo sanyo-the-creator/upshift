@@ -1,0 +1,101 @@
+ion-content {
+  --background: none;
+  background: linear-gradient(135deg, #1d0081, #1b1135);
+  ion-toolbar {
+    --background: none;
+  }
+  ion-grid{
+    h1 {
+      width: 100%;
+      text-align: center;
+      font-size: 40px;
+    }
+    .icon-col {
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      .vertical-bar {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        top: 15px;
+        width: 20px;
+        height: 120%;
+        background-color: rgba(24, 220, 255, 0.51);
+        border-radius: 10px;
+      }
+      .vertical-bar.last-bar {
+        height: 80%;
+      }
+    }
+    .text-col {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      h2 {
+        display: flex;
+        align-items: center;
+        height: 40px;
+        margin: 0;
+      }
+      ion-text {
+        color: #cacaca;
+      }
+    }
+    .icon-badge {
+      color: black;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 0;
+      background: #18dcff;
+      ion-icon {
+        font-size: 28px;
+      }
+    }
+    .price-row {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      .price {
+        padding: 15px 10px;
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+        border: 1px solid white;
+        border-radius: 15px;
+        ion-badge {
+          height: 20px;
+          width: 60%;
+          position: absolute;
+          top: -10px;
+          left: 50%;
+          transform: translateX(-50%);
+        }
+        h3 {
+          margin: 0;
+        }
+        ion-text {
+          color: #c6c6c6;
+        }
+        ion-checkbox::part(container) {
+          background-color: transparent;
+        }
+      }
+    }
+  }
+  .confirm-pay {
+    color: white;
+    --background: #37377e;
+    top: 90%;
+    left: 50%;
+    width: 100%;
+    padding: 32px;
+    transform: translate(-50%, -50%);
+    position: absolute;
+    text-align: center;
+  }
+}

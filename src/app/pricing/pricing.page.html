@@ -1,13 +1,51 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>pricing</ion-title>
-  </ion-toolbar>
-</ion-header>
-
-<ion-content [fullscreen]="true">
+<ion-content [fullscreen]="true" class="ion-padding">
   <ion-header collapse="condense">
     <ion-toolbar>
-      <ion-title size="large">pricing</ion-title>
+      <ion-row class="head">
+        <ion-icon name="arrow-back-outline" size="large"></ion-icon>
+      </ion-row>
     </ion-toolbar>
   </ion-header>
+
+  <ion-grid>
+    <ion-row class="ion-margin-bottom">
+      <h1>Start your upshift process right now!!</h1>
+    </ion-row>
+    <ion-row *ngFor="let content of pageContent; let isLast = last" class="ion-padding-top">
+      <ion-col size="3" class="icon-col">
+        <div class="vertical-bar" [class.last-bar]="isLast"></div>
+        <ion-badge class="icon-badge">
+          <ion-icon [name]="content.icon"></ion-icon>
+        </ion-badge>
+      </ion-col>
+      <ion-col class="text-col">
+        <h2>{{ content.title }}</h2>
+        <ion-text>
+          {{ content.text }}
+        </ion-text>
+      </ion-col>
+    </ion-row>
+    <ion-row class="price-row ion-margin-top ion-padding-top">
+      <ion-col size="5" class="price">
+        <div>
+          <h3>Monthly</h3>
+          <ion-text>9,99$ /mo</ion-text>
+        </div>
+        <ion-checkbox></ion-checkbox>
+      </ion-col>
+      <ion-col size="5.5" class="price">
+        <ion-badge>
+          <ion-text>
+            Better deal!
+          </ion-text>
+        </ion-badge>
+        <div>
+          <h3>Yearly</h3>
+          <ion-text>2,99$ /mo</ion-text>
+        </div>
+        <ion-checkbox></ion-checkbox>
+      </ion-col>
+    </ion-row>
+    <ion-button class="confirm-pay" size="large">Process to payment</ion-button>
+  </ion-grid>
 </ion-content>

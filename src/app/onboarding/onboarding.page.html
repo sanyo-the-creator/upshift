@@ -9,8 +9,8 @@
     </ion-toolbar>
   </ion-header>
 
-  <ion-grid *ngIf="currentQuestion && !quizEnded" class="ion-padding">
-    <ion-row class="questions">
+  <ion-grid *ngIf="currentQuestion" class="ion-padding">
+    <ion-row class="questions" *ngIf="!quizEnded">
       <h1>Question #{{ currentQuestion.id + 1 }}</h1>
       <ion-text class="ion-margin-top ion-margin-bottom">
         {{ currentQuestion.question }}
@@ -32,13 +32,13 @@
     </ion-row>
     <ion-row *ngIf="quizEnded">
       <h1>Do you have a referral code?</h1>
-      <ion-text>
+      <ion-text class="can-skip ion-padding-top">
         You can skip this step.
       </ion-text>
-      <ion-input>
-
-      </ion-input>
-      <ion-button>
+      <div class="input-wrapper">
+        <ion-input placeholder="Referral code"></ion-input>
+      </div>
+      <ion-button size="large" class="continue" [routerLink]="['/pricing']">
         Continue
       </ion-button>
     </ion-row>
